@@ -28,11 +28,11 @@
         :label="$t('contact.fields.street')"
         :value="user.address.street"
       />
-      <div>
+      <div class="form-row">
         <contact-input
           name="city"
           :label="$t('contact.fields.city')"
-          :value="user.address.street"
+          :value="user.address.city"
         />
         <contact-input
           name="zip"
@@ -51,6 +51,7 @@
           :value="user.website"
         />
     </form>
+    <button class="form-button">{{ $t('contact.save') }}</button>
   </div>
 </template>
 
@@ -69,7 +70,7 @@ const user = namespace('user');
     'contact-input': ContactInput,
   },
 })
-export default class UserCard extends Vue {
+export default class Contact extends Vue {
   @user.State
   public user!: UserType;
 

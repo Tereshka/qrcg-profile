@@ -29,7 +29,7 @@ const plan = namespace('plan');
     'information-card': InformationCard,
   },
 })
-export default class UserCard extends Vue {
+export default class Information extends Vue {
   @user.State
   public user!: UserType;
 

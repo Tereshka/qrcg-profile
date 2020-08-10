@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <input type='text' :id="name" :value="value" />
-    <label :for="name">{{ label }}</label>
+  <div class="contact-field">
+    <input class="contact-field__input" type='text' :id="name" :value="value" />
+    <label class="contact-field__label" :for="name">{{ label }}</label>
   </div>
 </template>
 

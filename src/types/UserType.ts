@@ -9,7 +9,7 @@ export type  UserType = {
   planId: number;
   address: UserAddress;
   customerId: string;
-  signupDate: Date,
+  signupDate: string,
   email: string;
   password: string;
 };

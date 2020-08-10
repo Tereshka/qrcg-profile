@@ -36,5 +36,21 @@
       "website": "Website"
     },
     "save": "Save"
+  },
+  "usage": {
+    "scans": "Scans",
+    "dynamicCodes": "Dynamic Codes",
+    "staticCodes": "Static Codes",
+    "users": "Users",
+    "upgrade": "Upgrade",
+    "addUsers": "Add users"
+  },
+  "whoAreYou": {
+    "description": "For the best possible experience, please let us know who you are",
+    "business": "business",
+    "agency": "agency",
+    "nonprofit": "nonprofit",
+    "educational": "educational",
+    "private": "private"
   }
 }
