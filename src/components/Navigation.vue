@@ -5,7 +5,7 @@
       <div class="logo__text">
         QR Code Generator
         <span class="logo__text--subtitle">
-          PRO
+          {{ currentPlan && currentPlan.label }}
         </span>
       </div>
     </div>
@@ -21,8 +21,17 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 
-};
+import { PlanType } from '../types/PlanType';
+
+const plan = namespace('plan');
+
+@Component
+export default class Navigation extends Vue {
+  @plan.Getter
+  public currentPlan!: PlanType;
+}
 </script>

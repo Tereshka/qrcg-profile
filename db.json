@@ -14,13 +14,38 @@
         "country": 1
       },
       "website": "www.coolweb.site",
-      "planId": 2
+      "planId": 2,
+      "customerId": "app-u-111",
+      "sigupDate": "31/12/2015",
+      "email": "test@email.com",
+      "password": "somepassword"
+    },
+    {
+      "id": 2,
+      "firstName": "Mary",
+      "lastName": "Doe",
+      "profileTitle": "Egoditor GmbH",
+      "phone": "891111111111",
+      "company": "Some company Ltd",
+      "address": {
+        "street": "Other Main Street",
+        "city": "Another Big city",
+        "zip": "654321",
+        "country": 3
+      },
+      "website": "www.anothercoolweb.site",
+      "planId": 1,
+      "customerId": "app-u-222",
+      "signupDate": "31/12/2015",
+      "email": "testmary@email.com",
+      "password": "somepassword"
     }
   ],
   "plans": [
     {
       "id": 1,
-      "name": "FREE",
+      "name": "Free",
+      "label": "FREE",
       "params": {
         "scans": 200,
         "dynamicsCodes": 10,
@@ -30,7 +55,8 @@
     },
     {
       "id": 2,
-      "name": "PRO",
+      "name": "Professional",
+      "label": "PRO",
       "params": {
         "scans": 0,
         "dynamicsCodes": 25000,

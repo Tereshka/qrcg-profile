@@ -1,0 +1,24 @@
+.information-card {
+  border: 1px solid @shadow-profile;
+  border-radius: 5px;
+  padding: 16px 10px;
+  width: calc(1/3*100% - (1 - 1/3)*5px);
+  text-align: center;
+  margin: 0px 5px 0px 0px;
+  box-sizing: border-box;
+
+  &__title {
+    text-transform: uppercase;
+    color: @information-card-color-text;
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: normal;
+    margin-bottom: 10px;
+  }
+
+  &__value {
+    font-size: 18px;
+    font-weight: 700;
+    color: @information-card-color-value;
+  }
+}

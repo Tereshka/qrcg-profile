@@ -7,5 +7,34 @@
     "apiKeys": "API Keys",
     "billing": "Billing",
     "edit": "Edit"
+  },
+  "accountSections": {
+    "information": "Information",
+    "contact": "Primary Contact",
+    "usage": "Usage",
+    "whoAreYou": "Who are you?"
+  },
+  "information": {
+    "customerId": "Customer id",
+    "signupDate": "Signup date",
+    "account": "Account",
+    "loginEmail": "Login Email",
+    "password": "Password",
+    "changeEmail": "Change Email"
+  },
+  "contact": {
+    "description": "Please, provide your contact information below",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phone": "Phone Number",
+      "company": "Company",
+      "street": "Street",
+      "city": "City",
+      "zip": "Zip Code",
+      "country": "Country",
+      "website": "Website"
+    },
+    "save": "Save"
   }
 }

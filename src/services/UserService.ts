@@ -5,12 +5,12 @@ class UserService {
     return http.get('/users');
   }
 
-  get(id: string) {
-    return http.get(`/users?id=${id}`);
+  get(id: number) {
+    return http.get(`/users/${id}`);
   }
 
-  update(id: string, data: any) {
-    return http.put(`/users?id=${id}`, data);
+  update(id: number, data: any) {
+    return http.put(`/users/${id}`, data);
   }
 }
 

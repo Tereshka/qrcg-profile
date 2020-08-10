@@ -8,6 +8,10 @@ export type  UserType = {
   website: string;
   planId: number;
   address: UserAddress;
+  customerId: string;
+  signupDate: Date,
+  email: string;
+  password: string;
 };
 
 type UserAddress = {
@@ -15,4 +19,4 @@ type UserAddress = {
   city: string;
   zip: string;
   country: number;
-}
+};

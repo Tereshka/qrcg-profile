@@ -9,13 +9,13 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'application.home',
-    redirect: '/profile',
+    redirect: '/profile/1/account',
     component: App,
   },
   {
-    path: '/profile',
+    path: '/profile/:id',
     name: 'application.profile',
-    redirect: '/profile/account',
+    redirect: '/profile/:id/account',
     component: Profile,
     children: [
       {

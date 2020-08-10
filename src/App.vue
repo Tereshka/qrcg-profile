@@ -6,13 +6,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { namespace } from 'vuex-class';
+import { Component, Vue } from 'vue-property-decorator';
 
-import UserService from './services/UserService';
 import Navigation from './components/Navigation.vue';
-
-const user = namespace('user');
 
 @Component({
   components: {
@@ -20,20 +16,6 @@ const user = namespace('user');
   },
 })
 export default class App extends Vue {
-  @user.Mutation
-  public setUser!: (id: number) => void;
 
-  created() {
-    console.log('created');
-    UserService.get(1)
-      .then((res) => {
-        // this.tutorial.id = response.data.id;
-        console.log(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-    // this.getUser(1);
-  }
 }
 </script>
