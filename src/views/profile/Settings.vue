@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="settings">
+    <img alt="Vue logo" src="../../assets/logo.png">
+    <HelloWorld msg="Welcome to Settings page"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
-  name: 'Home',
+  name: 'Settings',
   components: {
     HelloWorld,
   },

@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "profileTitle": "Egoditor GmbH",
+      "phone": "89000000000",
+      "company": "Some company Ltd",
+      "address": {
+        "street": "Main Street",
+        "city": "Big city",
+        "zip": "123456",
+        "country": 1
+      },
+      "website": "www.coolweb.site",
+      "planId": 2
+    }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "name": "FREE",
+      "params": {
+        "scans": 200,
+        "dynamicsCodes": 10,
+        "staticCodes": 20,
+        "users": 1
+      }
+    },
+    {
+      "id": 2,
+      "name": "PRO",
+      "params": {
+        "scans": 0,
+        "dynamicsCodes": 25000,
+        "staticCodes": 25000,
+        "users": 6
+      }
+    }
+  ],
+  "statistics": [
+    {
+      "id": 1,
+      "userId": 1,
+      "scans": 3423,
+      "dynamicsCodes": 123,
+      "staticCodes": 566,
+      "users": 1
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "Germany",
+      "code": "DE"
+    },
+    {
+      "id": 2,
+      "name": "The United Kindom",
+      "code": "EN"
+    },
+    {
+      "id": 3,
+      "name": "Spain",
+      "code": "ES"
+    },
+    {
+      "id": 4,
+      "name": "Portugal",
+      "code": "PT"
+    }
+  ]
+}

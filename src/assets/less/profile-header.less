@@ -1,0 +1,50 @@
+.profile-header {
+  background-color: @background-color-profile;
+  border-bottom: 2px solid @shadow-profile;
+  padding: 5px 80px 12px 80px;
+  text-align: left;
+
+  .profile-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    &__text {
+      font-size: 26px;
+      font-weight: 700;
+      color: @dark-blue;
+      margin: 50px 18px 50px 0px;
+    }
+
+    &__edit {
+      cursor: pointer;
+      
+      &__text {
+        font-weight: 700;
+        color: @blue;
+        margin-right: 6px;
+      }
+      &__icon {
+        color: @light-blue;
+      }
+    }
+
+    
+  }
+
+  a {
+    cursor: pointer;
+    font-weight: bold;
+    color: @link-color;
+    text-decoration: none;
+    padding: 12px;
+    
+
+    &.router-link-exact-active {
+      color: @blue;
+      
+      border-bottom: 2px solid @light-blue;
+    }
+  }
+
+}

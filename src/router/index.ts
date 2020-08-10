@@ -1,23 +1,56 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import App from '../App.vue';
+import Profile from '../views/Profile.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'application.home',
+    redirect: '/profile',
+    component: App,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/profile',
+    name: 'application.profile',
+    redirect: '/profile/account',
+    component: Profile,
+    children: [
+      {
+        path: 'account',
+        name: 'profle.account',
+        component: () => import('../views/profile/Account.vue'),
+      },
+      {
+        path: 'settings',
+        name: 'profle.settings',
+        component: () => import('../views/profile/Settings.vue'),
+      },
+      {
+        path: 'user-management',
+        name: 'profle.user-management',
+        component: () => import('../views/profile/UserManagement.vue'),
+      },
+      {
+        path: 'white-label',
+        name: 'profle.white-label',
+        component: () => import('../views/profile/WhiteLabel.vue'),
+      },
+      {
+        path: 'api-keys',
+        name: 'profle.api-keys',
+        component: () => import('../views/profile/ApiKeys.vue'),
+      },
+      {
+        path: 'billing',
+        name: 'profle.billing',
+        component: () => import('../views/profile/Billing.vue'),
+      },
+    ],
   },
+  
 ];
 
 const router = new VueRouter({

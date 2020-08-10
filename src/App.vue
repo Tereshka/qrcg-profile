@@ -1,32 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <navigation />
     <router-view/>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 
-#nav {
-  padding: 30px;
+import UserService from './services/UserService';
+import Navigation from './components/Navigation.vue';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+const user = namespace('user');
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@Component({
+  components: {
+    navigation: Navigation,
+  },
+})
+export default class App extends Vue {
+  @user.Mutation
+  public setUser!: (id: number) => void;
+
+  created() {
+    console.log('created');
+    UserService.get(1)
+      .then((res) => {
+        // this.tutorial.id = response.data.id;
+        console.log(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    // this.getUser(1);
   }
 }
-</style>
+</script>

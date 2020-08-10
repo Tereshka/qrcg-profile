@@ -1,0 +1,11 @@
+{
+  "header": {
+    "account": "Account",
+    "settings": "Settings",
+    "userManagement": "User Management",
+    "whiteLabel": "White Label",
+    "apiKeys": "API Keys",
+    "billing": "Billing",
+    "edit": "Edit"
+  }
+}
