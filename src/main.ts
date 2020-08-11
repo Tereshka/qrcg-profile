@@ -12,6 +12,8 @@ import {
   faQuestionCircle,
   faUser,
   faPencilAlt,
+  faSave,
+  faTimes,
   faBriefcase,
   faStore,
   faHandHoldingHeart,
@@ -33,6 +35,8 @@ library.add(
   faQuestionCircle,
   faUser,
   faPencilAlt,
+  faSave,
+  faTimes,
   faBriefcase,
   faStore,
   faHandHoldingHeart,
@@ -42,6 +46,8 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;
+
+export const bus = new Vue();
 
 new Vue({
   i18n,

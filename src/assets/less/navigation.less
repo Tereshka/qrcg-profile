@@ -52,6 +52,10 @@
       height: 23px;
       margin: 0px 10px;
       cursor: pointer;
+
+      &:hover {
+        color: @dark-blue;
+      }
     }
 
     &__account {
@@ -61,6 +65,10 @@
       &__text {
         color: @blue;
         font-weight: 700;
+      }
+
+      &:hover span, &:hover svg {
+        color: @dark-blue!important;
       }
     }
   }

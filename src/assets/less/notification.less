@@ -1,0 +1,24 @@
+.notification {
+  position: absolute;
+  top: 25px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 0px 3px 5px 2px @shadow-navigation;
+  z-index: 10;
+  width: fit-content;
+  padding: 15px 30px;
+  background: white;
+  font-weight: 700;
+
+  animation-name: show;
+  animation-duration: 6s;
+}
+
+@keyframes show {
+  0% { top: 0px; opacity: 1; }
+  10% { top: 25px; opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -1,8 +1,8 @@
 <template>
   <div class="contact">
     <h2>{{ $t('accountSections.contact') }}</h2>
-    <div>{{ $t('contact.description') }}</div>
-    <form v-if="user">
+    <div class="contact-description">{{ $t('contact.description') }}</div>
+    <form v-if="user && currentCountry">
       <contact-input
         name="firstName"
         :label="$t('contact.fields.firstName')"
@@ -40,11 +40,14 @@
           :value="user.address.zip"
         />
       </div>
-      <!-- <contact-input
-        name="country"
-        :label="$t('contact.fields.country')"
-        :value="user.address.country"
-      /> -->
+      <div class="contact-field">
+        <select class="contact-field__input" v-model="user.address.country">
+          <option v-for="country in countries" :key="country.code" :value="country.id">
+            {{ country.name }}
+          </option>
+        </select>
+        <label class="contact-field__label">{{ $t('contact.fields.country') }}</label>
+      </div>
       <contact-input
           name="website"
           :label="$t('contact.fields.website')"
@@ -62,8 +65,10 @@ import { namespace } from 'vuex-class';
 import ContactInput from '../common/ContactInput.vue';
 
 import { UserType } from '../../types/UserType';
+import { CountryType } from '../../types/CountryType';
 
 const user = namespace('user');
+const country = namespace('country');
 
 @Component({
   components: {
@@ -73,6 +78,12 @@ const user = namespace('user');
 export default class Contact extends Vue {
   @user.State
   public user!: UserType;
+
+  @country.State
+  public countries!: CountryType[];
+
+  @country.Getter
+  public currentCountry!: CountryType;
 
   // get fields() {
   //   return [

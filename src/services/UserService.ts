@@ -12,6 +12,14 @@ class UserService {
   update(id: number, data: any) {
     return http.put(`/users/${id}`, data);
   }
+
+  patch(id: number, data: any) {
+    return http.patch(`/users/${id}`, data);
+  }
+
+  getStatistics(userId: number) {
+    return http.get(`/statistics?userId=${userId}`);
+  }
 }
 
 export default new UserService();

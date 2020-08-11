@@ -1,0 +1,63 @@
+.sphere {
+  margin-left: 50px;
+  padding: 18px 0px;
+
+  h2 {
+    text-align: left;
+    margin-bottom: 0px;
+  }
+  &-description {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  &-card-wrapper {
+    display: flex;
+    flex-direction: row;
+    .sphere-card {
+      box-shadow: 0px 0px 5px 3px @shadow-navigation;
+      border-radius: 5px;
+      padding: 16px 10px;
+      width: calc(1/5*100% - (1 - 1/5)*8px);
+      text-align: center;
+      margin: 0px 8px 0px 0px;
+      box-sizing: border-box;
+      position: relative;
+      background-color: @white;
+      cursor: pointer;
+
+      &__title {
+        text-transform: uppercase;
+        color: @blue;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: normal;
+        // margin-bottom: 10px;
+      }
+      &__icon {
+        color: @light-blue;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+      }
+
+      &.selected {
+        background-color: @blue;
+        
+
+        svg, div {
+          color: @white;
+        }
+      }
+
+      &:hover {
+        background-color: @dark-blue;
+        
+      }
+
+      &:hover svg, &:hover div {
+        color: @white;
+      }
+    }
+  }
+}

@@ -6,7 +6,9 @@
     "whiteLabel": "White Label",
     "apiKeys": "API Keys",
     "billing": "Billing",
-    "edit": "Edit"
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel"
   },
   "accountSections": {
     "information": "Information",
@@ -39,7 +41,7 @@
   },
   "usage": {
     "scans": "Scans",
-    "dynamicCodes": "Dynamic Codes",
+    "dynamicsCodes": "Dynamic Codes",
     "staticCodes": "Static Codes",
     "users": "Users",
     "upgrade": "Upgrade",

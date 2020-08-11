@@ -20,3 +20,13 @@ type UserAddress = {
   zip: string;
   country: number;
 };
+
+
+export type StatisticsType = {
+  id: number;
+  userId: number;
+  scans: number;
+  dynamicsCodes: number;
+  staticCodes: number;
+  users: number;
+};

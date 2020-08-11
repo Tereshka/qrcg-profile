@@ -1,0 +1,79 @@
+.usage {
+  margin-left: 50px;
+  padding: 18px 0px;
+
+  h2 {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  &-card-wrapper {
+    display: flex;
+    flex-direction: row;
+    .usage-card {
+      border: 1px solid @shadow-profile;
+      border-radius: 5px;
+      padding: 16px 10px;
+      width: calc(1/4*100% - (1 - 1/4)*25px);
+      text-align: center;
+      margin: 0px 25px 0px 0px;
+      box-sizing: border-box;
+      position: relative;
+
+      &__title {
+        text-transform: uppercase;
+        color: @information-card-color-text;
+        font-weight: 900;
+        font-size: 12px;
+        letter-spacing: normal;
+        margin-bottom: 10px;
+      }
+      &__value {
+        font-size: 20px;
+        font-weight: 700;
+        color: @information-card-color-value;
+        padding-bottom: 4px;
+        &::after {
+          content: '';
+          display: block;
+          width: 14px;
+          border-bottom: 1px solid @information-card-color-text;
+          transform: rotate(-15deg);
+          margin: 0 auto;
+          padding-top: 5px;
+        }
+      }
+      &__default {
+        color: @usage-default-color;
+        font-size: 14px;
+        font-style: italic;
+      }
+      &__button {
+        background-color: @light-blue;
+        color: @white;
+        font-weight: 900;
+        font-size: 12px;
+        letter-spacing: unset;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        cursor: pointer;
+        position: absolute;
+        bottom: -10px;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        box-shadow: 0px 3px 5px 2px @shadow-navigation;
+
+        &:hover {
+          color: @white;
+          background-color: @dark-blue;
+        }
+        &:active {
+          background-color: @blue;
+        }
+      }
+    }
+  }
+}

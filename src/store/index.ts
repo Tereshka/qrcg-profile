@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 
 import User from './user';
 import Plan from './plan';
+import Country from './country';
 
 Vue.use(Vuex);
 
@@ -10,5 +11,6 @@ export default new Vuex.Store({
   modules: {
     user: User,
     plan: Plan,
+    country: Country,
   }
 });
