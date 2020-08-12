@@ -173,7 +173,7 @@ export default class Contact extends Vue {
 
   private saveChanges() {
     if (Object.keys(this.errors).length !== 0) {
-      bus.$emit('onShowNotification', 'Please, fill required fields');
+      bus.$emit('onShowNotification', this.$t('notification.fillFields'));
       return;
     }
     this.isDataChanged = false;
@@ -181,10 +181,10 @@ export default class Contact extends Vue {
     UserService.update(this.user.id, this.userClone)
       .then((res) => {
         this.setUser(res.data);
-        bus.$emit('onShowNotification', 'Your contact information has successfully updated!');
+        bus.$emit('onShowNotification', this.$t('notification.contactUpdated'));
       })
       .catch((e) => {
-        bus.$emit('onShowNotification', 'Something went wrong. Sorry((');
+        bus.$emit('onShowNotification', this.$t('notification.somethingWrong'));
         console.log(e);
       });
   }
@@ -206,34 +206,34 @@ export default class Contact extends Vue {
     const errors: Error = {};
 
     if (this.userClone!.firstName === '') {
-      errors.firstName = '* First name is required';
+      errors.firstName = this.$t('errors.firstName') as string;
     }
     if (this.userClone!.lastName === '') {
-      errors.lastName = '* Last name is required';
+      errors.lastName = this.$t('errors.lastName') as string;
     }
 
     if (this.userClone!.phone.length < 5) {
-      errors.phone = '* Your phone number is too small';
+      errors.phone = this.$t('errors.phone') as string;
     }
 
     if (this.userClone!.company === '') {
-      errors.company = '* Company is required';
+      errors.company = this.$t('errors.company') as string;
     }
 
     if (this.userClone!.address.street === '') {
-      errors.street = '* Street is required';
+      errors.street = this.$t('errors.street') as string;
     }
 
     if (this.userClone!.address.city === '') {
-      errors.city = '* City is required';
+      errors.city = this.$t('errors.city') as string;
     }
 
     if (this.userClone!.address.zip === '') {
-      errors.zip = '* ZIP code is required';
+      errors.zip = this.$t('errors.zip') as string;
     }
 
     if (this.userClone!.website === '') {
-      errors.website = '* Website is required';
+      errors.website = this.$t('errors.website') as string;
     }
 
     return errors;

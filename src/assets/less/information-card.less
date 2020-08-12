@@ -21,4 +21,39 @@
     font-weight: 700;
     color: @information-card-color-value;
   }
+
+  &-email {
+    border: 1px solid @shadow-profile;
+    border-radius: 5px;
+    padding: 16px 10px;
+    width: 100%;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &--col1 {
+      margin-left: 16px;
+    }
+    &--col2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      &__button {
+        text-align: right;
+      }
+    }
+  }
+
+  &__button {
+    font-weight: 700;
+    color: @blue;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: right;
+  }
 }

@@ -10,6 +10,7 @@
         :icon="card.icon"
         :value="card.value"
         :class="{selected: card.value === user.sphere}"
+        :disabled="isDisabled"
         @handleButtonClick="setSphere"
       />
     </div>
@@ -17,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import SphereCard from '../common/SphereCard.vue';
@@ -40,6 +41,8 @@ export default class Sphere extends Vue {
 
   @user.Mutation
   public setUser!: (user: UserType) => void;
+
+  private isDisabled = false;
 
   get cards() {
     return [
@@ -72,13 +75,16 @@ export default class Sphere extends Vue {
   }
 
   private setSphere(value: number) {
+    this.isDisabled = true;
+
     UserService.patch(this.user.id, { sphere: value })
       .then((res) => {
         this.setUser(res.data);
-        bus.$emit('onShowNotification', 'Your sphere successfully updated!');
+        this.isDisabled = false;
+        bus.$emit('onShowNotification', this.$t('notification.sphereUpdated'));
       })
       .catch((e) => {
-        bus.$emit('onShowNotification', 'Something went wrong. Sorry((');
+        bus.$emit('onShowNotification', this.$t('notification.somethingWrong'));
         console.log(e);
       });
   }

@@ -2,7 +2,7 @@
   <div class="usage-card">
     <div class="usage-card__title">{{ title }}</div>
     <div class="usage-card__value">{{ value }}</div>
-    <div class="usage-card__default">{{ dafaultValue }}</div>
+    <div class="usage-card__default">{{ defaultValueText }}</div>
     <button class="usage-card__button" @click="handleClick">{{ button }}</button>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default class UsageCard extends Vue {
 
   @Prop({ required: true, type: Number, default: 0 }) value!: number;
 
-  @Prop({ required: true, type: Number, default: 0 }) dafaultValue!: number;
+  @Prop({ required: true, type: Number, default: 0 }) defaultValue!: number;
 
   @Prop({ required: true, type: String, default: '' }) button!: string;
 
@@ -30,5 +30,9 @@ export default class UsageCard extends Vue {
   @Emit('handleButtonClick')
   // eslint-disable-next-line class-methods-use-this
   private handleClick(): void {}
+
+  get defaultValueText(): string|number {
+    return this.defaultValue === 0 ? this.$t('usage.unlimited') as string : this.defaultValue;
+  }
 }
 </script>

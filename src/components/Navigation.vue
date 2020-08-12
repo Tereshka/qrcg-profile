@@ -16,8 +16,14 @@
       <font-awesome-icon class="options__icon" icon="question-circle" @click="showInformation" />
       <span class="divider" />
       <div class="options__account">
-        <font-awesome-icon class="options__icon" icon="user" />
-        <span class="options__account__text">Account</span>
+        <button class="options__account__dropdown">
+          <font-awesome-icon class="options__icon" icon="user" />
+          <span class="options__account__text"> {{$t('header.account')}} </span>
+        </button>
+        <ul class="options__account__dropdown__content">
+          <li @click="changeCurrentUser">{{ $t('header.changeUser') }}</li>
+          <li @click="changeLocale">{{ localeText }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -27,10 +33,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
+import { Locales } from '../i18n/locales';
 import { PlanType } from '../types/PlanType';
 
 import { bus } from '../main';
 
+const core = namespace('core');
 const plan = namespace('plan');
 
 @Component
@@ -38,14 +46,52 @@ export default class Navigation extends Vue {
   @plan.Getter
   public currentPlan!: PlanType;
 
+  @core.State
+  private language!: Locales;
+
+  @core.Mutation
+  public setLanguage!: (locale: Locales) => void;
+
+  get localeText(): string {
+    let newLocale = '';
+    switch (this.language) {
+      case Locales.DE:
+        newLocale = Locales.EN;
+        break;
+      case Locales.EN:
+      default:
+        newLocale = Locales.DE;
+        break;
+    }
+    return this.$t('header.changeLocale', { locale: newLocale }) as string;
+  }
+
   // eslint-disable-next-line class-methods-use-this
   private showNotification(): void {
-    bus.$emit('onShowNotification', 'Sorry, no notifications to show');
+    bus.$emit('onShowNotification', this.$t('notification.noNotifications'));
   }
 
   // eslint-disable-next-line class-methods-use-this
   private showInformation(): void {
-    bus.$emit('onShowNotification', 'Welcome!<br>More projects in my <a href="https://github.com/Tereshka" target="_blank">github</a>');
+    bus.$emit('onShowNotification', this.$t('notification.welcome'));
+  }
+
+  private changeCurrentUser(): void {
+    this.$router.push({
+      name: 'application.profile',
+      params: {
+        id: this.$route.params.id === '1' ? '2' : '1',
+      },
+    });
+    bus.$emit('onShowNotification', this.$t('notification.userChanged'));
+  }
+
+  private changeLocale(): void {
+    if (this.language === Locales.EN) {
+      this.setLanguage(Locales.DE);
+    } else {
+      this.setLanguage(Locales.EN);
+    }
   }
 }
 </script>

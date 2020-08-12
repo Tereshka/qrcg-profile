@@ -1,5 +1,5 @@
 <template>
   <div class="settings">
-    <h1>This is a Settings page</h1>
+    <h1>{{ $t('header.thisIs', {name: $t('header.settings')}) }}</h1>
   </div>
 </template>

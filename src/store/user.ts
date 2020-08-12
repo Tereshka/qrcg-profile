@@ -18,12 +18,5 @@ class User extends VuexModule {
   public setStatistics(statistics: StatisticsType): void {
     this.statistics = statistics;
   }
-  // @Action
-  // public getUser(id: number): UserType {
-  //   console.log('store!');
-  //   const data = axios.get(`${this.context.rootState.apiPath}/user?id=${id}`);
-  //   return data;
-  //   this.context.commit('setUser', user);
-  // }
 }
 export default User;

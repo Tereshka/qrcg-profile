@@ -6,6 +6,7 @@ export type  UserType = {
   phone: string;
   company: string;
   website: string;
+  sphere: number;
   planId: number;
   address: UserAddress;
   customerId: string;

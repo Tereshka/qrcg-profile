@@ -1,49 +1,49 @@
 {
   "header": {
-    "account": "Account",
-    "settings": "Settings",
-    "userManagement": "User Management",
-    "whiteLabel": "White Label",
-    "apiKeys": "API Keys",
-    "billing": "Billing",
-    "changeUser": "Change User",
-    "changeLocale": "Change to {locale}",
+    "account": "Konto",
+    "settings": "Einstellungen",
+    "userManagement": "Benutzerverwaltung",
+    "whiteLabel": "Weißes Etikett",
+    "apiKeys": "API-Schlüssel",
+    "billing": "Abrechnung",
+    "changeUser": "Benutzer wechseln",
+    "changeLocale": "Wechseln zu {locale}",
     "edit": "Edit",
-    "save": "Save",
-    "cancel": "Cancel",
-    "thisIs": "This is a {name} page",
-    "thankYou": "Thank you for visiting!"
+    "save": "Sparen",
+    "cancel": "Stornieren",
+    "thisIs": "Dies ist eine {name} Seite",
+    "thankYou": "Danke für Ihren Besuch!"
   },
   "accountSections": {
     "information": "Information",
-    "contact": "Primary Contact",
-    "usage": "Usage",
-    "whoAreYou": "Who are you?"
+    "contact": "Hauptansprechpartner",
+    "usage": "Verwendung",
+    "whoAreYou": "Wer bist du?"
   },
   "information": {
-    "customerId": "Customer id",
+    "customerId": "Kunde id",
     "signupDate": "Signup date",
-    "account": "Account",
+    "account": "Konto",
     "loginEmail": "Login Email",
     "password": "Password",
-    "changeEmail": "Change Email",
-    "saveEmail": "Save Email"
+    "changeEmail": "Benutzer Email",
+    "saveEmail": "Sparen Email"
   },
   "contact": {
-    "description": "Please, provide your contact information below",
+    "description": "Bitte geben Sie unten Ihre Kontaktinformationen an",
     "fields": {
-      "firstName": "First Name",
-      "lastName": "Last Name",
-      "phone": "Phone Number",
-      "company": "Company",
-      "street": "Street",
-      "city": "City",
-      "zip": "Zip Code",
-      "country": "Country",
-      "website": "Website"
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "phone": "Telefonnummer",
+      "company": "Unternehmen",
+      "street": "Straße",
+      "city": "Stadt",
+      "zip": "PLZ",
+      "country": "Land",
+      "website": "Webseite"
     },
-    "save": "Save",
-    "cancel": "Cancel"
+    "save": "Sparen",
+    "cancel": "Stornieren"
   },
   "usage": {
     "scans": "Scans",
@@ -64,7 +64,7 @@
   },
   "notification": {
     "noNotifications": "Sorry, no notifications to show",
-    "welcome": "Welcome!<br>More projects in my <a href=\"https://github.com/Tereshka\" target=\"_blank\">github</a>",
+    "welcome": "Herzlich willkommen!<br>Weitere Projekte in meinem <a href=\"https://github.com/Tereshka\" target=\"_blank\">github</a>",
     "userChanged": "Current user has changed",
     "noPassword": "Sorry, no field for password changing",
     "emailInvalid": "Please, check your email, it's invalid",

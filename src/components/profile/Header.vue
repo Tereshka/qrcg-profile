@@ -17,31 +17,33 @@ import ProfileTitle from './ProfileTitle.vue';
   },
 })
 export default class Header extends Vue {
-  private links: Array<object> = [
-    {
-      to: 'profle.account',
-      title: this.$t('header.account'),
-    },
-    {
-      to: 'profle.settings',
-      title: this.$t('header.settings'),
-    },
-    {
-      to: 'profle.user-management',
-      title: this.$t('header.userManagement'),
-    },
-    {
-      to: 'profle.white-label',
-      title: this.$t('header.whiteLabel'),
-    },
-    {
-      to: 'profle.api-keys',
-      title: this.$t('header.apiKeys'),
-    },
-    {
-      to: 'profle.billing',
-      title: this.$t('header.billing'),
-    },
-  ]
+  get links(): Array<object> {
+    return [
+      {
+        to: 'profle.account',
+        title: this.$t('header.account'),
+      },
+      {
+        to: 'profle.settings',
+        title: this.$t('header.settings'),
+      },
+      {
+        to: 'profle.user-management',
+        title: this.$t('header.userManagement'),
+      },
+      {
+        to: 'profle.white-label',
+        title: this.$t('header.whiteLabel'),
+      },
+      {
+        to: 'profle.api-keys',
+        title: this.$t('header.apiKeys'),
+      },
+      {
+        to: 'profle.billing',
+        title: this.$t('header.billing'),
+      },
+    ];
+  }
 }
 </script>

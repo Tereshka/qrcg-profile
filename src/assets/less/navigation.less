@@ -67,8 +67,44 @@
     }
 
     &__account {
-      display: flex;
-      cursor: pointer;
+
+      &__dropdown {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &__content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          // min-width: 160px;
+          z-index: 10;
+          box-shadow: 0px 8px 16px 0px @shadow-navigation;
+          border-radius: 5px;
+          right: 0;
+          margin: 0px;
+          padding: 0px;
+
+          li {
+            font-weight: 700;
+            padding: 13px;
+            list-style: none;
+            cursor: pointer;
+
+            &:hover {
+              background-color: @divider;
+              color: @blue;
+            }
+            &:active {
+              background-color: @divider;
+              color: @light-blue;
+            }
+          }
+        }
+      }
 
       &__text {
         color: @blue;
@@ -77,6 +113,10 @@
 
       &:hover span, &:hover svg {
         color: @dark-blue!important;
+      }
+
+      &:hover ul {
+        display: block;
       }
     }
   }

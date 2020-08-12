@@ -9,6 +9,10 @@
         :value="card.value"
       />
     </div>
+    <information-card-email v-if="user"
+        :title="$t('information.loginEmail')"
+        :value="user.email"
+      />
   </div>
 </template>
 
@@ -17,6 +21,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import InformationCard from '../common/InformationCard.vue';
+import InformationCardEmail from '../common/InformationCardEmail.vue';
 
 import { UserType } from '../../types/UserType';
 import { PlanType } from '../../types/PlanType';
@@ -27,6 +32,7 @@ const plan = namespace('plan');
 @Component({
   components: {
     'information-card': InformationCard,
+    'information-card-email': InformationCardEmail,
   },
 })
 export default class Information extends Vue {

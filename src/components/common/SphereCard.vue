@@ -1,8 +1,8 @@
 <template>
-  <div class="sphere-card" @click="handleClick">
+  <button class="sphere-card" @click="handleClick">
     <font-awesome-icon class="sphere-card__icon" :icon="icon" />
     <div class="sphere-card__title" >{{ title }}</div>
-  </div>
+  </button>
 </template>
 
 <script lang="ts">

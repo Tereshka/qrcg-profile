@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import Header from '@/components/profile/Header.vue';
@@ -39,6 +39,13 @@ export default class Profile extends Vue {
 
   @country.Mutation
   public setCountries!: (countries: CountryType[]) => void;
+
+  @Watch('$route')
+  onUserIdChanged(newVal: any, oldVal: any) {
+    if (newVal.params.id !== oldVal.params.id) {
+      this.loadUserData();
+    }
+  }
 
   created() {
     this.loadUserData();

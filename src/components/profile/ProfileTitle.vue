@@ -68,16 +68,16 @@ export default class ProfileTitle extends Vue {
 
     if (this.name.length === 0) {
       this.name = this.user.profileTitle;
-      bus.$emit('onShowNotification', 'No empty data required');
+      bus.$emit('onShowNotification', this.$t('notification.noEmptyField'));
       return;
     }
     UserService.patch(this.user.id, { profileTitle: this.name })
       .then((res) => {
         this.setUser(res.data);
-        bus.$emit('onShowNotification', 'Your profile title successfully updated!');
+        bus.$emit('onShowNotification', this.$t('notification.profileUpdated'));
       })
       .catch((e) => {
-        bus.$emit('onShowNotification', 'Something went wrong. Sorry((');
+        bus.$emit('onShowNotification', this.$t('notification.somethingWrong'));
         console.log(e);
       });
   }

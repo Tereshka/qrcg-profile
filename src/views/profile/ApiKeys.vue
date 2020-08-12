@@ -1,5 +1,5 @@
 <template>
   <div class="api-keys">
-    <h1>This is an API Keys page</h1>
+    <h1>{{ $t('header.thisIs', {name: $t('header.apiKeys')}) }}</h1>
   </div>
 </template>

@@ -7,7 +7,7 @@
         :key="`usage-card-${i}`"
         :title="card.title"
         :value="card.value"
-        :dafaultValue="card.dafaultValue"
+        :defaultValue="card.defaultValue"
         :button="card.button"
         @handleButtonClick="card.onclick"
       />
@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
 import UsageCard from '../common/UsageCard.vue';
@@ -46,28 +46,28 @@ export default class Usage extends Vue {
       {
         title: this.$t('usage.scans'),
         value: this.statistics.scans,
-        dafaultValue: this.currentPlan.params.scans,
+        defaultValue: this.currentPlan.params.scans,
         button: this.$t('usage.upgrade'),
         onclick: this.handleClickUpgrade,
       },
       {
         title: this.$t('usage.dynamicsCodes'),
         value: this.statistics.dynamicsCodes,
-        dafaultValue: this.currentPlan.params.dynamicsCodes,
+        defaultValue: this.currentPlan.params.dynamicsCodes,
         button: this.$t('usage.upgrade'),
         onclick: this.handleClickUpgrade,
       },
       {
         title: this.$t('usage.staticCodes'),
         value: this.statistics.staticCodes,
-        dafaultValue: this.currentPlan.params.staticCodes,
+        defaultValue: this.currentPlan.params.staticCodes,
         button: this.$t('usage.upgrade'),
         onclick: this.handleClickUpgrade,
       },
       {
         title: this.$t('usage.users'),
         value: this.statistics.users,
-        dafaultValue: this.currentPlan.params.users,
+        defaultValue: this.currentPlan.params.users,
         button: this.$t('usage.addUsers'),
         onclick: this.handleClicAddUsers,
       },
@@ -76,12 +76,12 @@ export default class Usage extends Vue {
 
   // eslint-disable-next-line class-methods-use-this
   private handleClickUpgrade(): void {
-    bus.$emit('onShowNotification', 'Clicked on Upgrade. There should be some popup');
+    bus.$emit('onShowNotification', this.$t('notification.upgradeClicked'));
   }
 
   // eslint-disable-next-line class-methods-use-this
   private handleClicAddUsers(): void {
-    bus.$emit('onShowNotification', 'Clicked on Users. There should be some popup');
+    bus.$emit('onShowNotification', this.$t('notification.addUsersClicked'));
   }
 }
 </script>
