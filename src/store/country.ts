@@ -13,7 +13,7 @@ class Country extends VuexModule {
   }
   
   get currentCountry() {
-    return this.countries.find(el => el.id === this.context.rootState.user.user.address.country) || null;
+    return this.countries.find(el => el.id === +this.context.rootState.user.user.address.country) || null;
   }
 }
 export default Country;

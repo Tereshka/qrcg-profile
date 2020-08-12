@@ -1,6 +1,9 @@
 <template>
-  <div v-if="isVisible" class="notification">
-    {{ text }}
+  <div
+    v-if="isVisible"
+    class="notification"
+    v-html="text"
+  >
   </div>
 </template>
 
@@ -9,7 +12,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { bus } from '../main';
 
 @Component
-export default class InformationCard extends Vue {
+export default class Notification extends Vue {
   private isVisible = false;
 
   private text = 'Default notification text';

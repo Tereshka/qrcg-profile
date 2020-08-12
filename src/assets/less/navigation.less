@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 24px;
+  padding: 24px 0px;
   background-color: @white;
   box-shadow: 0px 0px 10px 5px @shadow-navigation;
   z-index:10;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .divider {
     border-left: 1px solid @divider;
@@ -15,37 +17,43 @@
   }
 
   .logo {
-    display: flex;
-    flex-direction: row;
-    &__image {
-      width: 24px;
-    }
+    text-decoration: none;
+    margin-left: 24px;
 
-    &__text {
-      margin-left: 8px;
-      font-weight: 700;
-      font-size: 18px;
+    &-card{
+      display: flex;
+      flex-direction: row;
       
-      position: relative;
-      color: @dark-blue;
+      &__image {
+        width: 24px;
+      }
 
-      &--subtitle {
-        background-color: @light-blue;
-        color: @white;
+      &__text {
+        margin-left: 8px;
         font-weight: 700;
-        font-size: 8px;
-        padding: 1px 2px;
-        position: absolute;
-        top: 0;
-        right: -24px;
-        letter-spacing: normal;
-        border-radius: 2px;
+        font-size: 18px;
+        position: relative;
+        color: @dark-blue;
+
+        &--subtitle {
+          background-color: @light-blue;
+          color: @white;
+          font-weight: 700;
+          font-size: 8px;
+          padding: 1px 2px;
+          position: absolute;
+          top: 0;
+          right: -24px;
+          letter-spacing: normal;
+          border-radius: 2px;
+        }
       }
     }
   }
 
   .options {
     display: flex;
+    margin-right: 24px;
 
     &__icon {
       color: @light-blue;

@@ -8,7 +8,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Emit } from 'vue-property-decorator';
+import {
+  Component,
+  Prop,
+  Vue,
+  Emit,
+} from 'vue-property-decorator';
 
 @Component
 export default class UsageCard extends Vue {
@@ -23,6 +28,7 @@ export default class UsageCard extends Vue {
   // @Prop() handleButtonClick!: any;
 
   @Emit('handleButtonClick')
+  // eslint-disable-next-line class-methods-use-this
   private handleClick(): void {}
 }
 </script>

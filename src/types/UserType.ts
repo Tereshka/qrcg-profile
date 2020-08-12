@@ -18,7 +18,7 @@ type UserAddress = {
   street: string;
   city: string;
   zip: string;
-  country: number;
+  country: number|string;
 };
 
 

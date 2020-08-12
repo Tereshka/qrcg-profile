@@ -37,7 +37,8 @@
       "country": "Country",
       "website": "Website"
     },
-    "save": "Save"
+    "save": "Save",
+    "cancel": "Cancel"
   },
   "usage": {
     "scans": "Scans",
