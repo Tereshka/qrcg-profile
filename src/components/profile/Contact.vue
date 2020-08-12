@@ -144,7 +144,7 @@ export default class Contact extends Vue {
   @country.Getter
   public currentCountry!: CountryType;
 
-  private userClone?: UserType;
+  private userClone?: any;
 
   private errors: Error = {};
 
@@ -194,7 +194,7 @@ export default class Contact extends Vue {
     const { name, value } = e.target;
 
     if (['street', 'city', 'zip', 'country'].includes(name)) {
-      this.userClone.address[name] = value;
+      this.userClone!.address[name] = value;
     } else {
       this.userClone[name] = value;
     }
